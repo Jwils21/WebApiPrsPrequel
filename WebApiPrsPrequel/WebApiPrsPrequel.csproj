@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -184,10 +190,42 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806280216483_init.cs" />
+    <Compile Include="Migrations\201806280216483_init.Designer.cs">
+      <DependentUpon>201806280216483_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806280250431_Added Vendors.cs" />
+    <Compile Include="Migrations\201806280250431_Added Vendors.Designer.cs">
+      <DependentUpon>201806280250431_Added Vendors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806280253460_Added vedor.cs" />
+    <Compile Include="Migrations\201806280253460_Added vedor.Designer.cs">
+      <DependentUpon>201806280253460_Added vedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806280309341_added products.cs" />
+    <Compile Include="Migrations\201806280309341_added products.Designer.cs">
+      <DependentUpon>201806280309341_added products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806280312065_fixed product.cs" />
+    <Compile Include="Migrations\201806280312065_fixed product.Designer.cs">
+      <DependentUpon>201806280312065_fixed product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806280314119_fixed product for real.cs" />
+    <Compile Include="Migrations\201806280314119_fixed product for real.Designer.cs">
+      <DependentUpon>201806280314119_fixed product for real.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Vendor.cs" />
+    <Compile Include="Models\WebApiPrsPrequelContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -246,7 +284,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -276,6 +313,26 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806280216483_init.resx">
+      <DependentUpon>201806280216483_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806280250431_Added Vendors.resx">
+      <DependentUpon>201806280250431_Added Vendors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806280253460_Added vedor.resx">
+      <DependentUpon>201806280253460_Added vedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806280309341_added products.resx">
+      <DependentUpon>201806280309341_added products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806280312065_fixed product.resx">
+      <DependentUpon>201806280312065_fixed product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806280314119_fixed product for real.resx">
+      <DependentUpon>201806280314119_fixed product for real.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
