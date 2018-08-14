@@ -221,12 +221,17 @@
     <Compile Include="Migrations\201806280314119_fixed product for real.Designer.cs">
       <DependentUpon>201806280314119_fixed product for real.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201806281406451_Added Users.cs" />
+    <Compile Include="Migrations\201806281406451_Added Users.Designer.cs">
+      <DependentUpon>201806281406451_Added Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vendor.cs" />
     <Compile Include="Models\WebApiPrsPrequelContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\JsonResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -267,7 +272,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -332,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201806280314119_fixed product for real.resx">
       <DependentUpon>201806280314119_fixed product for real.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201806281406451_Added Users.resx">
+      <DependentUpon>201806281406451_Added Users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
